@@ -33,7 +33,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.ts', '.tsx', '.js'],
+    alias: {
+      snabbdom: path.resolve(__dirname, 'node_modules', 'snabbdom', 'build')
+    }
   },
   plugins: [
     new HtmlWebPackPlugin({
