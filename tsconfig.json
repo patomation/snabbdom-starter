@@ -1,7 +1,11 @@
 {
   "extends": "tsconfigs/browser-executable",
   "compilerOptions": {
-    "outDir": "build"
+    "outDir": "build",
+    "baseUrl": ".",
+    "paths": {
+      "snabbdom/*": ["node_modules/snabbdom/build/package/*"]
+    }
   },
   "include": [
     "src/**/*",

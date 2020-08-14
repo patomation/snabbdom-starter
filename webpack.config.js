@@ -35,7 +35,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
-      snabbdom: path.resolve(__dirname, 'node_modules', 'snabbdom', 'build')
+      snabbdom: path.resolve(__dirname, 'node_modules', 'snabbdom', 'build', 'package')
     }
   },
   plugins: [
