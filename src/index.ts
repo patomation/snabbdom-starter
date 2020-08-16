@@ -18,7 +18,7 @@ const patch = init([ // Init patch function with chosen modules
 
 interface State {
   score: number,
-  showModal: boolean
+  showStartScreen: boolean
 }
 
 export const getString = (): string => {
@@ -27,11 +27,11 @@ export const getString = (): string => {
 
 let state: State = {
   score: 5000,
-  showModal: false
+  showStartScreen: true
 }
 
 const view = ({
-  score, showModal
+  score, showStartScreen
 }: State) => h('section', {
   style: {
     background: '#222',
@@ -68,11 +68,11 @@ const view = ({
       background: 'gray'
     }
   }, 'myApp'),
-  showModal
-    ? Modal({
-      content: 'My Modal',
-      click: () => setState({ showModal: false })
-    }) : null
+  showStartScreen
+    ? Modal({}, [
+      h('h1', 'Game Title'),
+      h('button', { on: { click: () => setState({ showStartScreen: false }) } }, 'Start')
+    ]) : null
 ])
 
 function setState (newState: Record<string, unknown>) {

@@ -1,16 +1,16 @@
-import { h } from 'snabbdom/h'
+import { h, ArrayOrElement, VNodeChildElement } from 'snabbdom/h'
 import { VNodeStyle } from 'snabbdom/modules/style'
 import { VNode } from 'snabbdom/vnode'
 
 export interface Props {
-  content?: VNode | string,
-  click: EventListener
+  click?: EventListener
 }
 
 export const Modal = ({
-  content,
   click
-}: Props): VNode => h('div', {
+}: Props,
+children?: ArrayOrElement<VNodeChildElement>
+): VNode => h('div', {
   props: { className: 'Modal' },
   style: {
     position: 'fixed',
@@ -25,16 +25,17 @@ export const Modal = ({
     remove: { opacity: '0' }
   } as unknown as VNodeStyle
 }, [
-  h('span', {
+  h('div', {
     props: { className: 'Modal__content' },
     style: {
       position: 'relative',
       top: '50%',
       left: '50%',
-      transform: 'translate(-50%, -50%)'
+      transform: 'translate(-50%, -50%)',
+      textAlign: 'center'
     }
-  }, content),
-  h('div', {
+  }, children),
+  click ? h('div', {
     props: { className: 'Modal__close-button' },
     style: {
       position: 'absolute',
@@ -45,8 +46,8 @@ export const Modal = ({
       fontWeight: 'bold'
     },
     on: { click }
-  }, 'X'),
-  h('div', {
+  }, 'X') : null,
+  click ? h('div', {
     props: { className: 'Modal__close-overlay' },
     style: {
       position: 'absolute',
@@ -57,5 +58,5 @@ export const Modal = ({
       zIndex: '-1'
     },
     on: { click }
-  })
+  }) : null
 ])
