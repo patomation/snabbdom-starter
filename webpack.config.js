@@ -1,5 +1,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const { titleCase } = require('title-case')
+const pkg = require('./package.json')
 
 module.exports = {
   entry: './src/index.ts',
@@ -36,7 +38,7 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       hash: true,
-      title: 'Vanilla Starter',
+      title: titleCase(pkg.name.replace('-', ' ')),
       template: './public/index.html',
       filename: './index.html'
     })
