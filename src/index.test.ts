@@ -1,7 +1,6 @@
 import test from 'ava'
+import { getString } from './index'
 
-test('basic test', (t) => {
-  const actual = 2 + 2
-  const expected = 4
-  t.is(actual, expected)
+test('get a string', (t) => {
+  t.is(getString(), 'a string')
 })

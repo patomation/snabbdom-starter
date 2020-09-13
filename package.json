@@ -12,7 +12,7 @@
     "lint": "./node_modules/.bin/eslint **/*.{js,ts,tsx}",
     "unit": "ava",
     "unit:coverage": "nyc ava",
-    "test": "run-s lint compile unit",
+    "test": "run-s lint compile:tests unit",
     "coverage": "run-s lint compile unit:coverage"
   },
   "keywords": [
