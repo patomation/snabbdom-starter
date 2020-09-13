@@ -54,6 +54,7 @@
     "nyc": "15.1.0",
     "sass-loader": "9.0.3",
     "style-loader": "1.2.1",
+    "title-case": "3.0.2",
     "ts-loader": "8.0.2",
     "ts-node": "8.10.2",
     "tsconfigs": "5.0.0",
