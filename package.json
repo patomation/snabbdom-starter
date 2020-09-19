@@ -4,7 +4,9 @@
   "description": "Snabbdom starter project",
   "main": "src/index.ts",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.config.js --hot --open",
+    "start": "concurrently \"npm:watch:typescript\" \"npm:start:webpack\"",
+    "watch:typescript": "npm run compile:app -- --watch",
+    "start:webpack": "webpack-dev-server --config webpack.dev.config.js --hot --open",
     "compile:tests": "tsc --build ./src/test/tsconfig.json",
     "compile:app": "tsc --project ./src/app/tsconfig.json",
     "compile": "run-s compile:tests compile:app",
@@ -43,6 +45,7 @@
     "@typescript-eslint/eslint-plugin": "4.1.0",
     "@typescript-eslint/parser": "4.1.0",
     "ava": "3.12.1",
+    "concurrently": "5.3.0",
     "css-loader": "4.3.0",
     "eslint": "7.9.0",
     "eslint-config-standard": "14.1.1",

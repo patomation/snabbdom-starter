@@ -27,7 +27,7 @@ export const App = (frame: Window): void => {
   ])
 
   let state: State = {
-    score: 5000,
+    score: 1000,
     showStartScreen: true
   }
 
