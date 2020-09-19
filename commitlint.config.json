@@ -8,6 +8,7 @@
       "deps",
       "example",
       "lint",
+      "store",
       "typescript",
       "webpack"
     ]]
