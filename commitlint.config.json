@@ -7,9 +7,9 @@
     "scope-enum": [2, "always", [
       "deps",
       "example",
-      "webpack",
-      "example",
-      "typescript"
+      "lint",
+      "typescript",
+      "webpack"
     ]]
   }
 }

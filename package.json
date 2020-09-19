@@ -9,7 +9,7 @@
     "compile:app": "tsc --project ./src/app/tsconfig.json",
     "compile": "run-s compile:tests compile:app",
     "build": "webpack --config webpack.prod.config.js",
-    "lint": "./node_modules/.bin/eslint **/*.{js,ts,tsx}",
+    "lint": "eslint --ext .ts,.js .",
     "unit": "ava",
     "unit:coverage": "nyc ava",
     "test": "run-s lint compile:tests unit",
