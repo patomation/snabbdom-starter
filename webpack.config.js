@@ -4,20 +4,9 @@ const { titleCase } = require('title-case')
 const pkg = require('./package.json')
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './build/app/bootstrap.js',
   module: {
     rules: [
-      {
-        test: /\.ts$/,
-        use: {
-          loader: 'ts-loader',
-          options: {
-            transpileOnly: true, // optimizes build performance
-            experimentalWatchApi: true // optimizes build performance
-          }
-        },
-        exclude: /node_modules/
-      },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -31,12 +20,6 @@ module.exports = {
         loader: 'file-loader?name=[name].[ext]' // Keeps original file name
       }
     ]
-  },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
-    alias: {
-      snabbdom: path.resolve(__dirname, 'node_modules', 'snabbdom', 'build', 'package')
-    }
   },
   plugins: [
     new HtmlWebPackPlugin({

@@ -1,0 +1,10 @@
+{
+  "extends": "tsconfigs/browser-executable",
+  "compilerOptions": {
+    "outDir": "../../build/app",
+    "composite": true
+  },
+  "include": [
+    "**/*.ts"
+  ]
+}
