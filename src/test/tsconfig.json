@@ -1,0 +1,17 @@
+{
+  "extends": "tsconfigs/nodejs-executable",
+  "compilerOptions": {
+    "outDir": "../../build/test",
+    "lib": [
+      "DOM"
+    ]
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "references": [
+    {
+      "path": "../app"
+    }
+  ]
+}

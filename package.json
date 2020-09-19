@@ -5,8 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.config.js --hot --open",
-    "compile:tests": "tsc --project tsconfig.test.json",
-    "compile:app": "tsc --project tsconfig.json",
+    "compile:tests": "tsc --build ./src/test/tsconfig.json",
+    "compile:app": "tsc --project ./src/app/tsconfig.json",
     "compile": "run-s compile:tests compile:app",
     "build": "webpack --config webpack.prod.config.js",
     "lint": "./node_modules/.bin/eslint **/*.{js,ts,tsx}",
@@ -22,8 +22,12 @@
   "author": "Patrick Kelly",
   "license": "ISC",
   "ava": {
+    "require": [
+      "./disable-err-require-esm.js",
+      "esm"
+    ],
     "files": [
-      "build/**/*.test.js"
+      "build/test/**/*.js"
     ]
   },
   "husky": {
@@ -46,6 +50,7 @@
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-standard": "4.0.1",
+    "esm": "3.2.25",
     "file-loader": "6.1.0",
     "html-webpack-plugin": "4.4.1",
     "husky": "4.3.0",

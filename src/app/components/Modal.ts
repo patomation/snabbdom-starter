@@ -1,6 +1,6 @@
-import { h, ArrayOrElement, VNodeChildElement } from 'snabbdom/h'
-import { VNodeStyle } from 'snabbdom/modules/style'
-import { VNode } from 'snabbdom/vnode'
+import { h, ArrayOrElement, VNodeChildElement } from 'snabbdom/build/package/h'
+import { VNodeStyle } from 'snabbdom/build/package/modules/style'
+import { VNode } from 'snabbdom/build/package/vnode'
 
 export interface Props {
   click?: EventListener
